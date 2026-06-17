@@ -144,14 +144,15 @@ a {
    7. Hero Section
    ---------------------------------------------------------- */
 .hero-section {
-    background-color: #f5f4f8;
+    background: linear-gradient(to right, #ffffff 5%, #eeedf8 32%, #8890d5 62%, var(--sfl-blue) 85%);
     padding: 72px 0 64px;
 }
 
 .hero-heading {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.25rem);
     font-weight: 700;
-    line-height: 1.18;
+    line-height: 1.15;
     color: var(--sfl-dark);
     margin-bottom: 1.25rem;
     letter-spacing: -0.01em;
@@ -170,6 +171,29 @@ a {
 }
 
 /* Hero CTA buttons */
+.btn-hero-filled {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffffff;
+    background-color: var(--sfl-blue);
+    border: 1.75px solid var(--sfl-blue);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 11px 18px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-hero-filled:hover {
+    background-color: #3a4baa;
+    border-color: #3a4baa;
+    color: #ffffff;
+}
+
 .btn-hero-outline {
     display: inline-flex;
     align-items: center;
@@ -227,12 +251,12 @@ a {
 
 .hero-image-accent {
     position: absolute;
-    top: 12%;
-    left: -14px;
-    width: 7px;
-    height: 62%;
-    background-color: var(--sfl-blue);
-    border-radius: 4px;
+    top: 18%;
+    left: -28px;
+    width: 56px;
+    height: 56%;
+    background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
     z-index: 1;
 }
 
