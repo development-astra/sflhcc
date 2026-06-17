@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title %}Recognitions &amp; Awards — South Florida Hispanic Chamber of Commerce{% endblock %}
+
+{% block content %}
+
+  {# ===================== HERO ===================== #}
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">
+        <span class="page-hero-accent">Recognized</span> across the nation for excellence
+      </h1>
+      <p class="page-hero-text">
+        The SFLHCC has earned recognition from federal, state, and local institutions for its
+        commitment to Hispanic business growth, advocacy, and community leadership.
+      </p>
+    </div>
+  </section>
+
+  {# ===================== STATS ROW ===================== #}
+  <section class="about-stats">
+    <div class="container">
+      <div class="about-stats-grid">
+
+        <div class="about-stat">
+          <p class="about-stat-value">130+</p>
+          <p class="about-stat-label">Year Founded</p>
+          <p class="about-stat-desc">July 21, 1994 &mdash; 32 years of service</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">1,600+</p>
+          <p class="about-stat-label">Members</p>
+          <p class="about-stat-desc">Hispanic and non-Hispanic businesses</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">67%</p>
+          <p class="about-stat-label">Hispanic Population</p>
+          <p class="about-stat-desc">Miami-Dade County demographics</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">Top 5</p>
+          <p class="about-stat-label">National Ranking</p>
+          <p class="about-stat-desc">One of the top five Hispanic Chambers in the U.S.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== RECOGNITIONS FEATURE ===================== #}
+  <section class="presmsg-section recog-feature">
+    <div class="container">
+      <p class="presmsg-eyebrow">From the Chairman</p>
+      <h2 class="presmsg-title">Resilience, growth, and our commitment to you</h2>
+
+      <div class="presmsg-grid">
+
+        <div class="presmsg-media">
+          <span class="presmsg-accent" aria-hidden="true"></span>
+          <div class="presmsg-photo recog-photo">
+            <span class="board-photo-fallback" aria-hidden="true"><i class="bi bi-image"></i></span>
+            <img class="board-photo"
+                 src="{{ url_for('static', filename='images/hero-event.png') }}"
+                 alt="Liliam M. López receiving the Kentucky Colonel Award" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="presmsg-body">
+          <p class="presmsg-text">
+            The South Florida Hispanic Chamber of Commerce is proud to highlight its distinguished
+            recognitions, including the prestigious Kentucky Colonel Award. This award, the highest
+            honor from the Commonwealth of Kentucky, was presented to Liliam M. López,
+            SFLHCC&rsquo;s President and CEO, in 2022 for her unwavering dedication to community
+            service and over 25 years of impactful leadership. Join us in celebrating this milestone
+            and learn more about the SFLHCC&rsquo;s commitment to environmental advocacy and the
+            empowerment of the Hispanic and non-Hispanic business community. The Kentucky Colonel
+            Award symbolizes our relentless pursuit of excellence and our mission to inspire positive
+            change. Discover more about our achievements and how we continue to lead the way for
+            businesses.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== FEATURE VIDEO ===================== #}
+  <section class="awards-video-section">
+    <span class="diag-corner diag-corner-tl" aria-hidden="true"></span>
+    <span class="diag-corner diag-corner-br" aria-hidden="true"></span>
+
+    <div class="container">
+      <div class="awards-video">
+        <a class="spotlight-video" href="#" data-yt-id="" aria-label="Play the SFLHCC recognition video">
+          <img class="spotlight-thumb"
+               src="{{ url_for('static', filename='images/seminar-speaker.jpg') }}"
+               alt="" aria-hidden="true"
+               onerror="this.classList.add('is-missing')">
+          <span class="yt-play" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

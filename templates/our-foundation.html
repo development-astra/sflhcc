@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Foundation — South Florida Hispanic Chamber of Commerce{% endblock %}
+
+{% block content %}
+
+  {# ===================== FOUNDATION HERO ===================== #}
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">
+        South Florida Hispanic Chamber of Commerce <span class="page-hero-accent">Foundation</span>
+      </h1>
+      <p class="page-hero-text">
+        Founded in 1995, the SFLHCC Foundation creates educational opportunities for students from
+        financially disadvantaged families &mdash; through scholarships, fellowships, internships,
+        and community programs.
+      </p>
+    </div>
+  </section>
+
+  {# ===================== STATS ROW ===================== #}
+  <section class="about-stats">
+    <div class="container">
+      <div class="about-stats-grid">
+
+        <div class="about-stat">
+          <p class="about-stat-value">1995</p>
+          <p class="about-stat-label">Year Founded</p>
+          <p class="about-stat-desc">30 years of student support</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">$1.25M+</p>
+          <p class="about-stat-label">Scholarships Awarded</p>
+          <p class="about-stat-desc">Over the past 30 years</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">450+</p>
+          <p class="about-stat-label">Students Benefited</p>
+          <p class="about-stat-desc">Fellowship program recipients</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">3.0</p>
+          <p class="about-stat-label">Min. GPA Required</p>
+          <p class="about-stat-desc">To maintain scholarship eligibility</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== FOUNDATION FEATURE ===================== #}
+  <section class="fdn-feature">
+    <div class="container">
+      <p class="fdn-eyebrow">The SFLHCC Foundation</p>
+      <h2 class="fdn-title">Creating Educational Opportunities for Students Who Need It Most</h2>
+      <p class="fdn-intro">
+        Founded in 1995, the SFLHCC Foundation was established to create educational opportunities
+        for students from financially disadvantaged families. The Foundation supports students who
+        aspire to pursue higher education but require financial assistance to do so. Selected
+        students are awarded scholarship funds that are paid directly to their college or university
+        of choice. Funds are disbursed quarterly, and students must maintain a minimum 3.0 GPA to
+        remain eligible.
+      </p>
+
+      <div class="fdn-grid">
+        <div class="fdn-media">
+          <img class="fdn-photo"
+               src="{{ url_for('static', filename='images/foundation.jpg') }}"
+               alt="SFLHCC Foundation fellowship students on the steps of the U.S. Capitol"
+               onerror="this.classList.add('is-missing')">
+        </div>
+        <div class="fdn-content">
+          <blockquote class="fdn-quote">The Foundation operates three core programs:</blockquote>
+          <ul class="fdn-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Education Enhancement Fellowship Program</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Scholarship Program</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Internship Program</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Healthy Food Program</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# ===================== FOUNDATION PROGRAMS ===================== #}
+  {% set programs = [
+    {
+      'title': 'Education Enhancement Fellowship Program',
+      'paras': [
+        'In partnership with Southwest Airlines, TD Bank, and other community partners, the SFLHCC Foundation offers Miami-Dade County Public Schools high school students the opportunity to participate in the Education Enhancement Fellowship Program. Established in 2003, this program is designed to empower disadvantaged students through experiential learning and leadership exposure.',
+        'Students apply through an essay contest and are selected by a committee. Fellowship recipients are awarded an all-expenses-paid opportunity to travel to out-of-state business conferences, where they engage with top corporate leaders and executives.',
+        'Through workshops and site visits with major corporations, fellows gain firsthand insight into the business world, leadership development, and community engagement. Past host companies include Facebook and Microsoft (Seattle), Macy’s (New York), Comcast (Philadelphia), Coca-Cola (Atlanta), and many others.',
+        'Upon returning to Miami, fellows participate in follow-up workshops and present their experiences to the Foundation’s leadership, demonstrating their personal and academic growth. Over the past 30 years, more than 450 students have benefited from this transformative program, which aims to expose students to successful business models and inspire them to become future leaders and community builders.'
+      ]
+    },
+    {
+      'title': 'Scholarship Program',
+      'paras': [
+        'Established in 1995, the SFLHCC Foundation’s Scholarship Program provides financial assistance to students attending Miami-Dade County Public Schools. Over the past 30 years, the Foundation has awarded more than $1,250,000 in scholarships.',
+        'Scholarship recipients are selected annually by the Foundation’s Education Committee. Awards range from $1,000 to $5,000, based on academic performance and GPA. Funds are paid directly to the educational institution of the student’s choice, and recipients’ academic progress is monitored to ensure continued eligibility.'
+      ]
+    },
+    {
+      'title': 'Internship Program',
+      'paras': [
+        'The SFLHCC Foundation’s Internship Program provides qualifying students with paid internship opportunities. Interns gain hands-on professional experience over two months while receiving compensation, allowing them to develop workplace skills and prepare for future careers.'
+      ]
+    },
+    {
+      'title': 'Education Enhancement Fellowship Program',
+      'paras': [
+        'The SFLHCC Foundation, in partnership with Southwest Airlines, the City of Miami Beach, and Miami-Dade County Public Schools, annually selects financially disadvantaged students to participate in the Education Enhancement Fellowship Program.',
+        'This program provides students with an all-expenses-paid opportunity to attend out-of-state conferences, exposing them to real-world business environments and leadership development experiences. Over the past 30 years, more than 450 students have benefited from this initiative. Participating host companies have included Facebook, Microsoft, Macy’s, Comcast, Coca-Cola, and others. The program’s mission is to introduce students to successful business leaders and diverse pathways to professional achievement.'
+      ]
+    },
+    {
+      'title': 'Fellowship Program',
+      'paras': [
+        'The SFLHCC Foundation’s Fellowship Program serves financially disadvantaged students who qualify for free or reduced lunch programs. Participants must demonstrate academic dedication, a strong work ethic, and leadership potential.',
+        'The Foundation covers all expenses for fellows to attend business conferences and leadership workshops across the country. These experiences connect students with corporate executives and community leaders, helping them develop skills to become future business professionals and agents of positive change within their communities. Fellows later return to share their experiences with the Foundation’s leadership, highlighting the personal, academic, and professional growth gained through the program.'
+      ]
+    },
+    {
+      'title': 'Healthy Food Program',
+      'paras': [
+        'The SFLHCC Healthy Food Program is a community-focused initiative dedicated to promoting wellness and combating food insecurity among children. Through partnerships with local schools, organizations, and sponsors, the program provides nutritious meals and snacks to children in need.',
+        'By ensuring access to healthy food options, the program supports children’s physical development, academic performance, and long-term well-being. Through this effort, the SFLHCC Foundation is helping build a healthier, stronger future for our youth.'
+      ]
+    }
+  ] %}
+
+  <section class="programs-section">
+    <div class="container">
+      {% for prog in programs %}
+      <div class="program-card">
+        <h3 class="program-title">{{ prog.title }}</h3>
+        {% for para in prog.paras %}<p class="program-text">{{ para }}</p>{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

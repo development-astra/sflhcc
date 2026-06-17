@@ -1,0 +1,309 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Committees — South Florida Hispanic Chamber of Commerce{% endblock %}
+
+{% block content %}
+
+  {# ===================== COMMITTEES HERO ===================== #}
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">
+        Our <span class="page-hero-accent">Committees</span>
+      </h1>
+      <p class="page-hero-text">
+        Dedicated groups of professionals and business leaders working together to advance the
+        SFLHCC&rsquo;s mission across health, technology, government, sustainability, and more.
+      </p>
+    </div>
+  </section>
+
+  {# ===================== COMMITTEES LIST ===================== #}
+  {% set committees = [
+    {
+      'num': '01', 'title': 'Health and Wellness',
+      'desc': 'The Health and Wellness Committee, chaired by Michelle Febres, is dedicated to promoting well-being and awareness through three significant annual events: the Heart Disease Awareness Luncheon, the Breast Cancer Awareness Luncheon, and the Health Champion Awards. Each event aims to educate, inspire, and recognize efforts in the realm of health and wellness, fostering a community committed to healthier lifestyles.',
+      'images': ['ev-1.jpg', 'ev-2.jpg', 'ev-3.jpg', 'ev-4.jpg']
+    },
+    {
+      'num': '02', 'title': 'Hispanic Women Society Network',
+      'desc': 'Chaired by Myrna Vaca and co-chaired by Vanessa Ferrod, the Hispanic Women’s Society Network Committee, founded in 2013, is the gateway to promoting healthy lifestyles and community well-being. Our Health and Wellness Committee organizes signature annual events, including the Heart Disease Awareness Luncheon, the Breast Cancer Awareness Luncheon, and the Health Champion Awards. These events educate attendees, inspire action, and celebrate efforts in health advocacy. Join us to connect with like-minded individuals, participate in impactful initiatives, and make a difference in promoting healthy lifestyles. Together, we can create a healthier, informed community that thrives on mutual support and awareness.',
+      'images': ['ev-5.jpg', 'ev-6.jpg', 'ev-7.jpg', 'ev-8.jpg'],
+      'chairs': [
+        {'name': 'Myrna Vaca', 'role': 'Chair', 'photo': 'board/myrna-vaca.jpg'},
+        {'name': 'Vanessa Ferrod', 'role': 'Co-Chair', 'photo': 'board/vanessa-ferrod.jpg'}
+      ]
+    },
+    {
+      'num': '03', 'title': 'Hispanic Business Club',
+      'desc': 'The South Florida Hispanic Chamber of Commerce proudly announces the launch of its Hispanic Bankers Club. This new initiative is dedicated to advancing financial literacy, improving access to capital, expanding economic opportunities, and fostering meaningful networking within the business community. Through strategic partnerships with leading financial institutions, the committee provides valuable resources, guidance, and support to help our members grow, thrive, and succeed in today’s evolving economy. Together, we are bridging communities, building connections, and creating pathways to lasting prosperity.',
+      'logo': 'hispanic-bankers-club', 'logo_alt': 'Hispanic Bankers Club',
+      'images': ['ev-2.jpg', 'ev-3.jpg', 'ev-4.jpg', 'ev-5.jpg']
+    },
+    {
+      'num': '04', 'title': 'Business Committee',
+      'desc': 'Founded in 2010, the SFLHCC Business Committee — chaired by Jose Perez de Corcho and co-chaired by Armando Trabanco — is committed to advancing financial literacy, improving access to capital, and expanding economic opportunities within the business community. Through strategic partnerships with financial institutions, the committee offers educational resources, guidance, and networking opportunities designed to help entrepreneurs and professionals thrive in today’s dynamic financial landscape.',
+      'images': ['ev-6.jpg', 'ev-7.jpg', 'ev-8.jpg', 'ev-1.jpg']
+    },
+    {
+      'num': '05', 'title': 'Business Technology Committee',
+      'desc': 'The SFLHCC Business Technology Committee, chaired by Jovianna Gonzalez and co-chaired by Andres Collazos, is dedicated to empowering businesses through innovation, education, and resources. The committee fosters partnerships with tech leaders and provides resources to help members embrace emerging technologies, enhance their online presence, and stay competitive in today’s digital economy.',
+      'logo': 'miami-tech-club', 'logo_alt': 'Miami Tech Club',
+      'images': ['ev-3.jpg', 'ev-4.jpg', 'ev-5.jpg', 'ev-6.jpg']
+    },
+    {
+      'num': '06', 'title': 'Ambassador\'s Committee',
+      'desc': 'Chaired by Nercy Radcliffe, the Ambassador’s Committee, founded in 2008, welcomes the chamber’s new members and coordinates a quarterly lunch with the Chairman of the SFLHCC to introduce new members, get to know them personally, and inform them about the chamber’s activities and programs. Ambassadors must be active members of the SFLHCC for at least three years to participate in this committee. This initiative helps new members maximize their membership benefits and get the most value from their involvement.',
+      'images': ['ev-7.jpg', 'ev-8.jpg', 'ev-1.jpg', 'ev-2.jpg']
+    },
+    {
+      'num': '07', 'title': 'Hospitality Committee',
+      'desc': 'The Hospitality Committee, chaired by Frank Bustamante, recognizes that tourism is Florida’s leading industry. To support chamber members within the hospitality sector, the committee aims to promote their businesses actively. As part of this initiative, the organization arranges quarterly networking receptions, highlighting various venues within the industry. Each member in the hospitality sector is given a chance to sponsor one of these networking events, providing a platform to showcase their hotels and restaurants to fellow organization members.'
+    },
+    {
+      'num': '08', 'title': 'Governmental Affairs Committee',
+      'desc': 'This committee oversees governmental and legislative affairs, addressing issues relevant to the community to serve as a strong advocate and voice for the business communities. The Governmental Affairs Committee is chaired by Daniel Espino and co-chaired by Myrna Vaca and Nercy Radcliffe.',
+      'images': ['ev-4.jpg', 'ev-5.jpg', 'ev-6.jpg', 'ev-7.jpg']
+    },
+    {
+      'num': '09', 'title': 'Education and Workforce Development Committee',
+      'desc': 'The chamber’s Education and Workforce Development Committee collaborates closely with the SFLHCC Foundation to promote various educational programs. The Foundation is responsible for the Education Enhancement Program, the Scholarship Program, and the Internship Program. Through these initiatives, the Foundation has awarded $775,000 in scholarship funds, significantly contributing to educational advancement and opportunities. The committee’s efforts help ensure that these impactful programs reach and benefit the broader community. Co-Chairs are Michelle Febres and Felipe Basulto.',
+      'chairs': [
+        {'name': 'Anthony Rionda', 'role': 'Chair', 'photo': 'board/anthony-rionda.jpg'},
+        {'name': 'Michelle Febres', 'role': 'Co-Chair', 'photo': 'board/michelle-febres.jpg'}
+      ]
+    },
+    {
+      'num': '10', 'title': 'Sustainability Committee',
+      'desc': 'Chaired by Mike Fernandez and co-chaired by Irela Bagué, the SFLHCC Sustainability Committee orchestrates the Chamber’s eco-focused events, including the flagship Sustainability Lunch and Panel Discussion. This annual gathering features a panel discussion to educate and engage attendees on critical environmental issues. The event promotes awareness, encourages actionable change, and focuses on reducing waste, conserving resources, and fostering sustainable behaviors within the community and beyond. The committee strives to drive meaningful impact and inspire eco-friendly practices through its initiatives.',
+      'images': ['ev-1.jpg', 'ev-3.jpg', 'ev-5.jpg', 'ev-7.jpg']
+    }
+  ] %}
+
+  <div class="committees-list">
+    {% for c in committees %}
+    <section class="committee">
+      <div class="container">
+
+        <div class="committee-head">
+          <div class="committee-head-text">
+            <p class="committee-num">{{ c.num }}</p>
+            <h2 class="committee-name">{{ c.title }}</h2>
+            <p class="committee-desc">{{ c.desc }}</p>
+          </div>
+          {% if c.logo %}
+          <div class="committee-logo">
+            <img src="{{ url_for('static', filename='images/committees/' ~ c.logo ~ '.png') }}"
+                 alt="{{ c.logo_alt }}"
+                 onerror="this.style.display='none'; this.nextElementSibling.hidden=false">
+            <span class="committee-logo-fallback" hidden>{{ c.logo_alt }}</span>
+          </div>
+          {% endif %}
+        </div>
+
+        {% if c.chairs and c.images %}
+        {# Variant: solo carousel + chair cards #}
+        <div class="committee-split">
+          <div class="committee-carousel committee-solo" data-committee-carousel>
+            <div class="committee-viewport">
+              <ul class="committee-track">
+                {% for img in c.images %}
+                <li class="committee-slide {{ 'is-active' if loop.first }}">
+                  <img class="committee-photo" src="{{ url_for('static', filename='images/committees/' ~ img) }}"
+                       alt="" aria-hidden="true" onerror="this.classList.add('is-missing')">
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="committee-controls">
+              <button type="button" class="carousel-arrow" data-cc-prev aria-label="Previous photo"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
+              <div class="carousel-dots" role="group" aria-label="Choose photo">
+                {% for img in c.images %}<button type="button" class="carousel-dot {{ 'is-active' if loop.first }}" data-cc-dot aria-label="Go to photo {{ loop.index }}"></button>{% endfor %}
+              </div>
+              <button type="button" class="carousel-arrow" data-cc-next aria-label="Next photo"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+
+          <div class="committee-chairs">
+            {% for ch in c.chairs %}
+            <article class="chair-card">
+              <div class="chair-photo">
+                <span class="board-photo-fallback" aria-hidden="true"><i class="bi bi-person"></i></span>
+                <img class="board-photo" src="{{ url_for('static', filename='images/' ~ ch.photo) }}"
+                     alt="{{ ch.name }}" onerror="this.style.display='none'">
+              </div>
+              <div class="chair-info">
+                <p class="chair-name">{{ ch.name }}</p>
+                <p class="chair-role">{{ ch.role }}</p>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% elif c.chairs %}
+        {# Variant: chair cards only (centered) #}
+        <div class="committee-chairs committee-chairs-only">
+          {% for ch in c.chairs %}
+          <article class="chair-card">
+            <div class="chair-photo">
+              <span class="board-photo-fallback" aria-hidden="true"><i class="bi bi-person"></i></span>
+              <img class="board-photo" src="{{ url_for('static', filename='images/' ~ ch.photo) }}"
+                   alt="{{ ch.name }}" onerror="this.style.display='none'">
+            </div>
+            <div class="chair-info">
+              <p class="chair-name">{{ ch.name }}</p>
+              <p class="chair-role">{{ ch.role }}</p>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+
+        {% elif c.images %}
+        {# Standard: center-emphasis carousel #}
+        <div class="committee-carousel" data-committee-carousel>
+          <div class="committee-viewport">
+            <ul class="committee-track">
+              {% for img in c.images %}
+              <li class="committee-slide {{ 'is-active' if loop.first }}">
+                <img class="committee-photo" src="{{ url_for('static', filename='images/committees/' ~ img) }}"
+                     alt="" aria-hidden="true" onerror="this.classList.add('is-missing')">
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="committee-controls">
+            <button type="button" class="carousel-arrow" data-cc-prev aria-label="Previous photo"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
+            <div class="carousel-dots" role="group" aria-label="Choose photo">
+              {% for img in c.images %}<button type="button" class="carousel-dot {{ 'is-active' if loop.first }}" data-cc-dot aria-label="Go to photo {{ loop.index }}"></button>{% endfor %}
+            </div>
+            <button type="button" class="carousel-arrow" data-cc-next aria-label="Next photo"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="committee-join">
+          <a href="#" class="btn-solid-blue">Join Now <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          <span class="committee-join-note">Must be a member to join</span>
+        </div>
+
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+
+  {# ===================== DIVERSITY AND INCLUSION ===================== #}
+  <section class="diversity-section">
+    <span class="diag-corner diag-corner-tl" aria-hidden="true"></span>
+    <span class="diag-corner diag-corner-br" aria-hidden="true"></span>
+    <div class="container">
+      <div class="diversity-inner">
+        <h2 class="diversity-title">Diversity and Inclusion</h2>
+        <p class="diversity-text">
+          At SFLHCC, we celebrate diversity and prioritize inclusion in everything we do. We
+          believe that diversity isn&rsquo;t just about representation; it&rsquo;s about creating an
+          environment where every individual feels valued, respected, and empowered to bring their
+          unique perspectives to the table. Our commitment to diversity and inclusion extends beyond
+          words&mdash;it&rsquo;s woven into the fabric of our organization. We actively seek out and
+          embrace diverse viewpoints, backgrounds, and experiences, recognizing that they enrich our
+          work and enhance our ability to serve our community effectively.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {# ===================== YOUNG LEADERS NETWORK ===================== #}
+  <section class="yln-section">
+    <div class="container">
+      <h2 class="yln-title">Young Leaders Network (YLN)</h2>
+      <p class="yln-intro">
+        The Young Leaders Network (YLN) is the SFLHCC&rsquo;s pipeline for the next generation of
+        Hispanic business leaders. Designed for young professionals and entrepreneurs in South
+        Florida, YLN provides mentorship, leadership development, and a powerful peer network.
+        Members gain access to exclusive events, seasoned mentors, and the tools they need to
+        accelerate their careers and businesses.
+      </p>
+
+      {% set yln = [
+        {'name': 'Christopher Gonzalez-Jacobo', 'slug': 'christopher-gonzalez-jacobo', 'lines': ['Employee Benefits Producer', 'Brown & Brown']},
+        {'name': 'Vanessa Ferrod', 'slug': 'vanessa-ferrod', 'lines': ['Chief Operating Officer', 'Eternal Life Services']},
+        {'name': 'Lillian K. Sanchez', 'slug': 'lillian-sanchez', 'lines': ['Service Planner', 'FPL']},
+        {'name': 'Marcus Jacobo', 'slug': 'marcus-jacobo', 'lines': ['Commercial Insurance Advisor', 'Brown & Brown']},
+        {'name': 'David Perez', 'slug': 'david-perez', 'lines': ['Chief Development & Divisional Officer', 'Broward Children\'s Center']},
+        {'name': 'Andres F Collazos C', 'slug': 'andres-collazos', 'lines': ['Sales Development Project Manager', 'South Florida Delta Airlines']},
+        {'name': 'Gabriel Duran', 'slug': 'gabriel-duran', 'lines': ['District Manager', 'Paylocity']}
+      ] %}
+
+      <div class="yln-grid">
+        {% for m in yln %}
+        <article class="yln-card">
+          <div class="yln-photo">
+            <span class="board-photo-fallback" aria-hidden="true"><i class="bi bi-person"></i></span>
+            <img class="board-photo" src="{{ url_for('static', filename='images/yln/' ~ m.slug ~ '.jpg') }}"
+                 alt="{{ m.name }}" onerror="this.style.display='none'">
+          </div>
+          <div class="yln-info">
+            <p class="yln-name">{{ m.name }}</p>
+            {% for line in m.lines %}<p class="yln-role">{{ line }}</p>{% endfor %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# ===================== YLN INFO CARDS ===================== #}
+  {% set yln_cards = [
+    {
+      'icon': 'bi-bullseye', 'title': 'Goals:',
+      'items': [
+        'To create a welcoming atmosphere where young professionals can meet, connect, learn, and prosper together.',
+        'Created an opportunity for young professionals to meet and learn from those who came before them.',
+        'As the current SFLHCC membership base ages, there should be a loyal membership base ready to step in and ensure the organization remains a going concern.'
+      ]
+    },
+    {
+      'icon': 'bi-check2-square', 'title': 'Activities and Benefits',
+      'items': [
+        'All of SFLHCC Membership benefits',
+        'Monthly networking opportunities: luncheons, with hosting/sponsorship opportunities, and RSVP list available to all attendees',
+        'Opportunity to participate in the Youth Entrepreneurship Program and become a mentor for a sr. high school students',
+        'Access to video archives of online events',
+        'Participation in group events — golf tournaments, domino tournaments, cigar & wine tastings',
+        'Opportunities for leadership roles within the Council',
+        'Online tools and educational materials',
+        'Online services, e.g. web hosting, cloud storage space, referral for design and development services',
+        'Online Published Membership Directory',
+        'Career development services – volunteer to help other YP members with resume.',
+        'Mentorship opportunities with more seasoned SFLHCC members'
+      ]
+    },
+    {
+      'icon': 'bi-book', 'title': 'Workshop Topics for YPs',
+      'items': [
+        'Business Spanish Seminar',
+        'Social Media Marketing',
+        'Retirement Planning for the under 40 crowd',
+        'Taking your career/start-up to the next level',
+        'Geographical business development opportunities (midtown, downtown, design district, little Havana, Miami beach, etc.)',
+        'Leadership skills for young managers',
+        'Relationship building success tips from master networkers from the SFLHCC'
+      ]
+    }
+  ] %}
+
+  <section class="info-cards-section">
+    <div class="container">
+      {% for card in yln_cards %}
+      <div class="info-card">
+        <h3 class="info-card-title"><i class="bi {{ card.icon }}" aria-hidden="true"></i>{{ card.title }}</h3>
+        <ul class="info-card-list">
+          {% for item in card['items'] %}
+          <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>{{ item }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

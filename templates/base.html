@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}South Florida Hispanic Chamber of Commerce{% endblock %}</title>
 
-    <!-- Google Fonts: Playfair Display -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Poppins (UI) + Playfair Display (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -18,13 +20,204 @@
 </head>
 <body>
 
-    {% include 'sections/navbar.html' %}
+    {# ======================= SITE HEADER ======================= #}
+    <header class="site-header">
+      <div class="header-wrap">
 
+        {# Logo #}
+        <a class="header-logo-link" href="{{ url_for('index') }}">
+          <img class="header-logo"
+               src="{{ url_for('static', filename='images/logo.png') }}"
+               alt="SFLHCC — South Florida Hispanic Chamber of Commerce">
+        </a>
+
+        {# Mobile toggler #}
+        <button class="header-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#headerMobile"
+                aria-controls="headerMobile" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+
+        {# Desktop header (right side) #}
+        <div class="header-desktop">
+
+          {# Top row: utility links + CTA buttons #}
+          <div class="header-top-row">
+            <nav class="utility-nav" aria-label="Utility">
+              <a class="utility-link" href="#">Event Photos</a>
+              <a class="utility-link" href="#">Upcoming Events</a>
+              <a class="utility-link" href="#">What Our Members Say</a>
+              <a class="utility-link" href="#">Newsletters</a>
+              <a class="utility-link" href="#">Business Directory</a>
+            </nav>
+
+            <div class="header-ctas">
+              <a class="btn-pill btn-member-login" href="#">
+                Member Login <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+              <a class="btn-pill btn-join-chamber" href="#">
+                Join The Chamber <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          {# Blue pill main navigation #}
+          <nav class="main-nav" aria-label="Primary">
+            <a class="main-nav-link" href="{{ url_for('index') }}">Home</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="{{ url_for('about') }}">About Us</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="{{ url_for('committees') }}">Committees</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="#">Membership</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="{{ url_for('our_foundation') }}">Our Foundation</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="#">Careers</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="#">Business Minute</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="#">Advertisement</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="#">Magazine</a>
+            <span class="nav-divider"></span>
+            <a class="main-nav-link" href="#">Contact</a>
+          </nav>
+
+        </div>
+      </div>
+
+      {# Mobile collapse menu #}
+      <div class="collapse header-mobile" id="headerMobile">
+        <nav class="mobile-main-nav" aria-label="Primary mobile">
+          <a class="mobile-nav-link" href="{{ url_for('index') }}">Home</a>
+          <a class="mobile-nav-link" href="{{ url_for('about') }}">About Us</a>
+          <a class="mobile-nav-link" href="{{ url_for('committees') }}">Committees</a>
+          <a class="mobile-nav-link" href="#">Membership</a>
+          <a class="mobile-nav-link" href="{{ url_for('our_foundation') }}">Our Foundation</a>
+          <a class="mobile-nav-link" href="#">Careers</a>
+          <a class="mobile-nav-link" href="#">Business Minute</a>
+          <a class="mobile-nav-link" href="#">Advertisement</a>
+          <a class="mobile-nav-link" href="#">Magazine</a>
+          <a class="mobile-nav-link" href="#">Contact</a>
+        </nav>
+
+        <nav class="mobile-utility-nav" aria-label="Utility mobile">
+          <a class="mobile-utility-link" href="#">Event Photos</a>
+          <a class="mobile-utility-link" href="#">Upcoming Events</a>
+          <a class="mobile-utility-link" href="#">What Our Members Say</a>
+          <a class="mobile-utility-link" href="#">Newsletters</a>
+          <a class="mobile-utility-link" href="#">Business Directory</a>
+        </nav>
+
+        <div class="mobile-ctas">
+          <a class="btn-pill btn-member-login" href="#">
+            Member Login <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a class="btn-pill btn-join-chamber" href="#">
+            Join The Chamber <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    {# ======================= PAGE CONTENT ======================= #}
     <main>
         {% block content %}{% endblock %}
     </main>
 
-    {% include 'sections/footer.html' %}
+    {# ======================= SITE FOOTER ======================= #}
+    <footer class="site-footer">
+
+      {# Red CTA banner #}
+      <section class="footer-cta">
+        <div class="footer-cta-inner">
+          <h2 class="footer-cta-heading">Your Business Belongs Here</h2>
+          <p class="footer-cta-text">
+            Join 1,600+ business owners growing alongside the South Florida Hispanic
+            Chamber of Commerce. Become a member today and unlock networking, monthly
+            seminars, visibility, and the resources to move your business forward.
+          </p>
+          <div class="footer-cta-buttons">
+            <a class="btn-cta btn-cta-white" href="#">
+              Join The Chamber Today <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a class="btn-cta btn-cta-outline" href="#">
+              Talk To Our Team <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {# Dark navy footer #}
+      <section class="footer-main">
+        <div class="footer-main-inner">
+
+          {# Brand / about #}
+          <div class="footer-col footer-about">
+            <a class="footer-logo-link" href="{{ url_for('index') }}">
+              <img class="footer-logo"
+                   src="{{ url_for('static', filename='images/logo.png') }}"
+                   alt="SFLHCC — South Florida Hispanic Chamber of Commerce">
+            </a>
+            <p class="footer-about-text">
+              The South Florida Hispanic Chamber of Commerce — empowering Miami's
+              Hispanic business community since 1994.
+            </p>
+          </div>
+
+          {# Quick links #}
+          <div class="footer-col footer-links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <nav class="footer-links-grid" aria-label="Footer quick links">
+              <a class="footer-link" href="{{ url_for('index') }}">Home</a>
+              <a class="footer-link" href="{{ url_for('about') }}">About us</a>
+              <a class="footer-link" href="#">Committees</a>
+              <a class="footer-link" href="#">Careers</a>
+              <a class="footer-link" href="#">Membership</a>
+              <a class="footer-link" href="#">Our foundation</a>
+              <a class="footer-link" href="#">Business Minute</a>
+              <a class="footer-link" href="#">Advertisement</a>
+              <a class="footer-link" href="#">Magazine</a>
+              <a class="footer-link" href="#">Contact</a>
+            </nav>
+          </div>
+
+          {# Contact #}
+          <div class="footer-col footer-contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-contact-list">
+              <li class="footer-contact-item">
+                <i class="bi bi-geo-alt-fill footer-contact-icon" aria-hidden="true"></i>
+                <span>333 Arthur Godfrey Road, Suite 300 Miami Beach, FL 33140</span>
+              </li>
+              <li class="footer-contact-item">
+                <i class="bi bi-telephone-fill footer-contact-icon" aria-hidden="true"></i>
+                <span>Phone: <a class="footer-contact-link" href="tel:+13055341903">(305) 534-1903</a></span>
+              </li>
+              <li class="footer-contact-item">
+                <i class="bi bi-printer-fill footer-contact-icon" aria-hidden="true"></i>
+                <span>Fax: (305) 534-8365</span>
+              </li>
+              <li class="footer-contact-item">
+                <i class="bi bi-envelope-fill footer-contact-icon" aria-hidden="true"></i>
+                <span>Email: <a class="footer-contact-link" href="mailto:info@sflhcc.com">info@sflhcc.com</a></span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {# Bottom bar #}
+        <div class="footer-bottom">
+          <span class="footer-copyright">
+            &copy; 2026 South Florida Hispanic Chamber of Commerce All rights reserved.
+          </span>
+          <span class="footer-credit">Designed and Developed by Astra Marketing Results</span>
+        </div>
+      </section>
+    </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

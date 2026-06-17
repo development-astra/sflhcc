@@ -77,18 +77,15 @@ sflhcc/
 ├── requirements.txt        # Python dependencies
 ├── static/
 │   ├── css/style.css       # Custom styles (built on Bootstrap 5)
-│   ├── js/main.js
-│   └── images/             # Logo, hero photo, partner logos
+│   ├── js/main.js          # Carousel + YouTube-facade behavior
+│   └── images/             # Logo, photos, partner/member logos
 └── templates/
-    ├── base.html           # Base layout (Bootstrap, fonts, scripts)
-    ├── index.html          # Page entry point
-    └── sections/           # Modular section templates
-        ├── navbar.html
-        ├── hero.html
-        ├── about.html
-        ├── services.html
-        ├── portfolio.html
-        ├── testimonials.html
-        ├── contact.html
-        └── footer.html
+    ├── base.html           # Layout + site header + site footer (the shared shell)
+    └── index.html          # Home page — all content sections inlined here
 ```
+
+> `base.html` holds the full HTML shell: `<head>`, the **site header**, the `{% block content %}`
+> slot, the **site footer**, and the scripts. `index.html` does `{% extends 'base.html' %}` and
+> fills the content block with all home-page sections (hero, seminars, join CTA, impact, events
+> carousel, upcoming events, calendar, Open for Business, certification, member spotlight,
+> advertise, newsletters, and supporting members).

@@ -4,11 +4,655 @@
 
 {% block content %}
 
-    {% include 'sections/hero.html' %}
-    {% include 'sections/about.html' %}
-    {% include 'sections/services.html' %}
-    {% include 'sections/portfolio.html' %}
-    {% include 'sections/testimonials.html' %}
-    {% include 'sections/contact.html' %}
+  {# ========================= HERO ========================= #}
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center gx-0 gx-lg-5 gy-5">
+
+        <div class="col-lg-6">
+          <h1 class="hero-heading">
+            <span class="hero-heading-accent">Empowering</span> South Florida&rsquo;s Hispanic Business Community
+          </h1>
+
+          <p class="hero-subtext">
+            The South Florida Hispanic Chamber of Commerce (SFLHCC) connects, supports, and
+            advocates for Hispanic-owned businesses across Miami-Dade and beyond&nbsp;&mdash;
+            helping you grow, lead, and succeed.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#" class="btn-hero-filled">
+              Join The Chamber Today
+              <i class="bi bi-arrow-up-right hero-cta-icon" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="btn-hero-outline">
+              View Upcoming Events
+              <i class="bi bi-arrow-up-right hero-cta-icon" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="hero-partners">
+            <p class="partners-label">In Partnership With</p>
+            <div class="partners-logos">
+              <img src="{{ url_for('static', filename='images/partner-elevate.png') }}"
+                   alt="Elevate South Florida" class="partner-logo"
+                   onerror="this.style.display='none'">
+              <img src="{{ url_for('static', filename='images/partner-ushcc.png') }}"
+                   alt="USHCC" class="partner-logo"
+                   onerror="this.style.display='none'">
+              <img src="{{ url_for('static', filename='images/partner-wellsfargo.png') }}"
+                   alt="Wells Fargo" class="partner-logo"
+                   onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-image-wrap">
+            <span class="hero-image-accent" aria-hidden="true"></span>
+            <img src="{{ url_for('static', filename='images/hero-event.png') }}"
+                 alt="SFLHCC award ceremony — members receiving a proclamation"
+                 class="hero-image">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== MONTHLY SEMINARS ===================== #}
+  <section class="seminars-section">
+    <div class="container">
+
+      <p class="seminars-eyebrow">New For Members</p>
+      <h2 class="seminars-title">Monthly Seminars to Help You Sell More and Grow Faster</h2>
+
+      <p class="seminars-intro">
+        We&rsquo;re bringing members something new. Every month, the SFLHCC hosts a live seminar on
+        the strategies that actually move small businesses forward &mdash; from modern digital
+        marketing and AI-driven search to the business processes that turn more leads into paying
+        customers. Led by our Chamber Ambassadors, every session is practical, current, and built to
+        grow your bottom line.
+      </p>
+
+      <blockquote class="seminars-quote">
+        Hosted monthly by Harry Norman, Astra Results Marketing &mdash; SFLHCC Chamber Ambassador.
+      </blockquote>
+
+      <div class="seminars-body">
+
+        <div class="seminars-media">
+          <span class="seminars-ribbon">Free for members!</span>
+          <img src="{{ url_for('static', filename='images/seminar-speaker.jpg') }}"
+               alt="A Chamber Ambassador presenting to a seated audience at a monthly seminar"
+               class="seminars-photo"
+               onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+        </div>
+
+        <div class="seminars-content">
+          <ul class="seminars-list">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Digital marketing that delivers real ROI</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>How AI and voice search are changing the way customers find you</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Streamlining your business processes and operations</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Turning leads into sales &mdash; smarter lead generation and follow-up</span></li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Business development strategies for small businesses</span></li>
+          </ul>
+
+          <div class="seminars-ctas">
+            <a href="#" class="btn-solid-blue">
+              Save My Seat <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="btn-outline-dark">
+              See The Schedule <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== JOIN THE CHAMBER CTA ===================== #}
+  <section class="join-section">
+    <span class="diag-corner diag-corner-tl" aria-hidden="true"></span>
+    <span class="diag-corner diag-corner-br" aria-hidden="true"></span>
+
+    <div class="container">
+      <div class="join-grid">
+
+        <div class="join-main">
+          <p class="join-eyebrow">A Different Kind of Backyard</p>
+          <h2 class="join-title">Join the SFLHCC Today</h2>
+
+          <h3 class="join-subtitle">Exclusive Membership Offer</h3>
+          <p class="join-text">
+            Now&rsquo;s the perfect time to invest in your business and grow your network. Enjoy
+            <span class="join-percent">[XX]%</span> off new SFLHCC membership when you join today.
+          </p>
+
+          <div class="join-promo">
+            <div class="join-promo-code">
+              <span class="join-promo-label">Enter promo code:</span>
+              <span class="join-promo-value">SFLHCCXX</span>
+              <span class="join-promo-valid">Offer valid until [date].</span>
+            </div>
+            <p class="join-promo-bonus">
+              Plus, a chance to win 2 round-trip tickets from Southwest Airlines.
+            </p>
+          </div>
+        </div>
+
+        <div class="join-aside">
+          <ul class="join-list">
+            <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>High-impact networking with business and community leaders</span></li>
+            <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Increased visibility through Chamber marketing and events</span></li>
+            <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Monthly growth seminars and educational workshops</span></li>
+            <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Advocacy and support for Hispanic-owned and Hispanic-serving businesses</span></li>
+            <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Exclusive member benefits and sponsorship opportunities</span></li>
+          </ul>
+
+          <a href="#" class="btn-solid-red">
+            Join The Chamber <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== IMPACT / STATS ===================== #}
+  <section class="impact-section">
+    <div class="container">
+
+      <div class="impact-head">
+        <h2 class="impact-title">Hispanics: Driving Growth and Innovation in the U.S. Economy</h2>
+        <p class="impact-intro">
+          At the South Florida Hispanic Chamber of Commerce, we empower Hispanic businesses to
+          thrive. Join us in celebrating our community&rsquo;s achievements and building a brighter
+          future together.
+        </p>
+      </div>
+
+      <div class="impact-grid">
+
+        <article class="impact-col">
+          <span class="impact-icon" aria-hidden="true"><i class="bi bi-building"></i></span>
+          <h3 class="impact-col-title">Unmatched Business Growth</h3>
+          <p class="impact-col-text">
+            Hispanic-owned businesses are thriving, growing 57% from 2007 to 2021 &mdash; outpacing
+            their counterparts.
+          </p>
+        </article>
+
+        <article class="impact-col">
+          <span class="impact-icon" aria-hidden="true"><i class="bi bi-megaphone"></i></span>
+          <h3 class="impact-col-title">Entrepreneurial Leaders</h3>
+          <p class="impact-col-text">
+            Nearly 1 in 4 new entrepreneurs in the U.S. are Hispanic, leading innovation and
+            economic progress.
+          </p>
+        </article>
+
+        <article class="impact-col">
+          <span class="impact-icon" aria-hidden="true"><i class="bi bi-houses"></i></span>
+          <h3 class="impact-col-title">Building the Middle Class</h3>
+          <p class="impact-col-text">
+            Hispanic households are driving upward mobility, with 4.6 million new Latino households
+            since 2013 and a 30% rise in homeownership.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  {# ============== THIS WEEK IN THE CHAMBER (carousel) ============== #}
+  <section class="events-section">
+    <div class="container">
+      <div class="events-grid">
+
+        <div class="events-text">
+          <p class="events-eyebrow">This Week in the Chamber</p>
+          <h2 class="events-title">New Year, New Connections: Networking Reception at IFB</h2>
+          <p class="events-intro">
+            Our members came together for an unforgettable evening of connection and
+            conversation. Take a look at the highlights.
+          </p>
+          <a href="#" class="btn-solid-blue">
+            View More Photos <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="events-carousel" data-carousel>
+          <div class="events-viewport">
+            <ul class="events-track">
+              <li class="events-slide">
+                <img class="events-photo"
+                     src="{{ url_for('static', filename='images/hero-event.png') }}"
+                     alt="SFLHCC members at the New Year networking reception"
+                     onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+              </li>
+              <li class="events-slide">
+                <img class="events-photo"
+                     src="{{ url_for('static', filename='images/event-2.jpg') }}"
+                     alt="Members networking during the reception"
+                     onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+              </li>
+              <li class="events-slide">
+                <img class="events-photo"
+                     src="{{ url_for('static', filename='images/event-3.jpg') }}"
+                     alt="Guests enjoying conversation at the event"
+                     onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+              </li>
+              <li class="events-slide">
+                <img class="events-photo"
+                     src="{{ url_for('static', filename='images/event-4.jpg') }}"
+                     alt="Group photo from the networking reception"
+                     onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+              </li>
+            </ul>
+          </div>
+
+          <div class="events-controls">
+            <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous photo">
+              <i class="bi bi-arrow-left" aria-hidden="true"></i>
+            </button>
+            <div class="carousel-dots" role="group" aria-label="Choose photo">
+              <button type="button" class="carousel-dot is-active" data-carousel-dot aria-label="Go to photo 1"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Go to photo 2"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Go to photo 3"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Go to photo 4"></button>
+            </div>
+            <button type="button" class="carousel-arrow" data-carousel-next aria-label="Next photo">
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== UPCOMING EVENTS ===================== #}
+  <section class="upcoming-section">
+    <span class="upcoming-watermark" aria-hidden="true">SFLHCC</span>
+
+    <div class="container">
+      <div class="upcoming-head">
+        <p class="upcoming-eyebrow">Join Us</p>
+        <h2 class="upcoming-title">Upcoming Events</h2>
+        <p class="upcoming-intro">
+          There&rsquo;s always something happening at the Chamber. Reserve your spot at our next
+          event and see the network in action.
+        </p>
+      </div>
+
+      <div class="upcoming-grid">
+
+        <article class="event-card">
+          <img class="event-flyer"
+               src="{{ url_for('static', filename='images/event-luncheon.jpg') }}"
+               alt="Flyer for the SFLHCC New Members&rsquo; Luncheon"
+               onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+          <h3 class="event-card-title">SFLHCC New Members&rsquo; Luncheon</h3>
+          <ul class="event-meta">
+            <li><i class="bi bi-calendar-event" aria-hidden="true"></i><span>Jun 10, 2026</span></li>
+            <li><i class="bi bi-clock" aria-hidden="true"></i><span>11:30 AM &ndash; 2:00 PM</span></li>
+            <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i><span>Fogo de Ch&atilde;o Brazilian Steakhouse, 2801 Ponce de Leon Blvd, Coral Gables, FL 33134, USA</span></li>
+          </ul>
+          <div class="event-card-actions">
+            <a href="#" class="btn-card-rsvp">RSVP</a>
+            <a href="#" class="event-more-link">More Info <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img class="event-flyer"
+               src="{{ url_for('static', filename='images/event-symposium.jpg') }}"
+               alt="Flyer for the SFLHCC Health &amp; Business Symposium"
+               onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+          <h3 class="event-card-title">SFLHCC Health &amp; Business Symposium &amp; Health Champion Awards Luncheon &amp; Panel Discussion</h3>
+          <ul class="event-meta">
+            <li><i class="bi bi-calendar-event" aria-hidden="true"></i><span>Jun 11, 2026</span></li>
+            <li><i class="bi bi-clock" aria-hidden="true"></i><span>11:30 AM &ndash; 2:00 PM</span></li>
+            <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i><span>Biltmore Hotel Miami Coral Gables, 1200 Anastasia Ave, Coral Gables, FL 33134, USA</span></li>
+          </ul>
+          <div class="event-card-actions">
+            <a href="#" class="btn-card-rsvp">RSVP</a>
+            <a href="#" class="event-more-link">More Info <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="upcoming-cta">
+        <a href="#" class="btn-solid-red">
+          View All Events <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {# ===================== CALENDAR OF EVENTS ===================== #}
+  <section class="calendar-section">
+    <div class="container">
+      <div class="calendar-bar">
+        <div class="calendar-text">
+          <p class="calendar-year">2026</p>
+          <h2 class="calendar-title">Calendar of Events</h2>
+          <p class="calendar-sub">See everything we have planned for the year ahead</p>
+        </div>
+        <a href="#" class="btn-solid-red calendar-cta">
+          View Calendar <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {# ================== OPEN FOR BUSINESS FUND ================== #}
+  <section class="ofb-section">
+    <div class="container">
+      <div class="ofb-grid">
+
+        <div class="ofb-text">
+          <p class="ofb-year">2026</p>
+          <h2 class="ofb-title">USHCC Open for Business Fund</h2>
+          <p class="ofb-body">
+            The Open for Business Fund, created by Wells Fargo, is a $420 million initiative
+            dedicated to supporting small businesses across the United States. This fund was
+            established by directing fees Wells Fargo received from processing Paycheck Protection
+            Program (PPP) loans in 2020 back into communities.
+          </p>
+          <a href="#" class="btn-solid-blue ofb-cta">
+            Learn More <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="ofb-ads">
+          <a href="#" class="ofb-ad">
+            <img class="ofb-ad-img"
+                 src="{{ url_for('static', filename='images/ad-fpl.jpg') }}"
+                 alt="FPL — committed to powering strong communities"
+                 onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+          </a>
+          <a href="#" class="ofb-ad">
+            <img class="ofb-ad-img"
+                 src="{{ url_for('static', filename='images/ad-carepoint.jpg') }}"
+                 alt="CarePoint — learn more"
+                 onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+          </a>
+          <a href="#" class="ofb-ad">
+            <img class="ofb-ad-img ofb-ad-tall"
+                 src="{{ url_for('static', filename='images/ad-taxcollector.jpg') }}"
+                 alt="Miami-Dade Tax Collector — pay it, print it, post it"
+                 onerror="this.classList.add('is-missing'); this.alt=''; this.setAttribute('aria-hidden','true')">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== GET CERTIFIED ===================== #}
+  <section class="cert-section">
+    <span class="diag-corner diag-corner-tl" aria-hidden="true"></span>
+    <span class="diag-corner diag-corner-br" aria-hidden="true"></span>
+
+    <div class="container">
+      <div class="cert-grid">
+
+        <div class="cert-main">
+          <p class="cert-eyebrow">In Partnership With Chase</p>
+          <h2 class="cert-title">Get Certified.<br>Win More Contracts.</h2>
+          <h3 class="cert-subtitle">Chase and the SFLHCC are partnering</h3>
+          <p class="cert-body">
+            To help minority-owned businesses navigate the certification process and access new
+            opportunities. Through JPMorgan Chase&rsquo;s Advancing Hispanics &amp; Latinos initiative
+            and the NMSDC, eligible MBEs can have their certification fees reimbursed &mdash; opening
+            doors to corporations focused on supplier diversity.
+          </p>
+        </div>
+
+        <div class="cert-card">
+          <h3 class="cert-card-title">Minority Business<br>Enterprise Certification</h3>
+          <p class="cert-card-body">
+            JPMorgan Chase&rsquo;s Advancing Hispanics &amp; Latinos initiative partners with the
+            National Minority Supplier Development Council (NMSDC) to open doors to corporations
+            focused on supplier diversity.
+          </p>
+          <p class="cert-card-contact">
+            Contact: Guillermo Diaz, Sr. Business Consultant, JPMorgan Chase
+          </p>
+          <a href="#" class="btn-cta btn-cta-white cert-card-cta">
+            Start Your Certification <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== MEMBER SPOTLIGHT ===================== #}
+  {# Video cards are click-to-load facades: add data-yt-id="VIDEOID" to embed (see main.js). #}
+  <section class="spotlight-section">
+    <div class="container">
+
+      <div class="spotlight-head">
+        <p class="spotlight-eyebrow">In Partnership With WSFL-TV</p>
+        <h2 class="spotlight-title">Member Spotlight</h2>
+        <p class="spotlight-intro">
+          We&rsquo;re putting our members center stage. Watch featured SFLHCC businesses share their
+          stories through our WSFL-TV Member Spotlight series.
+        </p>
+      </div>
+
+      <div class="spotlight-grid">
+
+        <div class="spotlight-item">
+          <a class="spotlight-video" href="#" data-yt-id="" aria-label="Play the ARK Solvers Member Spotlight video">
+            <img class="spotlight-thumb"
+                 src="{{ url_for('static', filename='images/spotlight-ark.jpg') }}"
+                 alt="" aria-hidden="true"
+                 onerror="this.classList.add('is-missing')">
+            <span class="yt-play" aria-hidden="true"></span>
+          </a>
+          <p class="spotlight-name">ARK Solvers</p>
+        </div>
+
+        <div class="spotlight-item">
+          <a class="spotlight-video" href="#" data-yt-id="" aria-label="Play the Amigos for Kids Member Spotlight video">
+            <img class="spotlight-thumb"
+                 src="{{ url_for('static', filename='images/spotlight-amigos.jpg') }}"
+                 alt="" aria-hidden="true"
+                 onerror="this.classList.add('is-missing')">
+            <span class="yt-play" aria-hidden="true"></span>
+          </a>
+          <p class="spotlight-name">Amigos for Kids</p>
+        </div>
+
+        <div class="spotlight-item">
+          <a class="spotlight-video" href="#" data-yt-id="" aria-label="Play the Broward Children&rsquo;s Center Member Spotlight video">
+            <img class="spotlight-thumb"
+                 src="{{ url_for('static', filename='images/spotlight-broward.jpg') }}"
+                 alt="" aria-hidden="true"
+                 onerror="this.classList.add('is-missing')">
+            <span class="yt-play" aria-hidden="true"></span>
+          </a>
+          <p class="spotlight-name">Broward Children&rsquo;s Center</p>
+        </div>
+
+      </div>
+
+      <div class="spotlight-cta">
+        <a href="#" class="btn-solid-blue">
+          Watch More Spotlights <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {# ===================== ADVERTISE AT OUR EVENTS ===================== #}
+  <section class="advertise-section">
+    <img class="advertise-kiosk"
+         src="{{ url_for('static', filename='images/event-kiosk.png') }}"
+         alt="" aria-hidden="true"
+         onerror="this.style.display='none'">
+
+    <div class="container">
+
+      <div class="advertise-head">
+        <p class="advertise-eyebrow">Join Us</p>
+        <h2 class="advertise-title">Advertise Your Business at Our Events</h2>
+        <p class="advertise-intro">
+          Put your brand in front of an engaged audience on our new 32-inch digital screen
+          &mdash; positioned in our event registration area for prime visibility.
+        </p>
+      </div>
+
+      <div class="advertise-cards">
+
+        <article class="ad-card">
+          <span class="ad-icon" aria-hidden="true"><i class="bi bi-image"></i></span>
+          <div class="ad-tag">
+            <span class="ad-tag-name">Static Ad (Image)</span>
+            <span class="ad-tag-price">$75 Per Event</span>
+          </div>
+          <p class="ad-desc">
+            Image-based advertisement displayed on our digital event screen. High visibility at
+            check-in for every attendee.
+          </p>
+          <div class="ad-spec">
+            <p class="ad-spec-format">Static Ad: JPEG/PNG</p>
+            <p class="ad-spec-size">8.5 x 11 in</p>
+          </div>
+        </article>
+
+        <article class="ad-card">
+          <span class="ad-icon" aria-hidden="true"><i class="bi bi-film"></i></span>
+          <div class="ad-tag">
+            <span class="ad-tag-name">Video Ad (Image)</span>
+            <span class="ad-tag-price">$100 Per Event</span>
+          </div>
+          <p class="ad-desc">
+            Image + motion advertisement for maximum impact during event registration.
+            Eye-catching and memorable.
+          </p>
+          <div class="ad-spec">
+            <p class="ad-spec-format">Video Ad: MP4/MOV</p>
+            <p class="ad-spec-size">30 seconds max</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="advertise-footer">
+        <blockquote class="advertise-quote">
+          Prime visibility at event check-in.<br>
+          Captive, high-value audience.<br>
+          Affordable exposure for your brand.
+        </blockquote>
+
+        <div class="advertise-ctas">
+          <a href="#" class="btn-solid-red">
+            Reserve My Ad Space Today <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a href="tel:+13055341903" class="btn-outline-light">
+            Call (305) 534-1903 <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {# ===================== READ OUR NEWSLETTERS ===================== #}
+  <section class="news-section">
+    <div class="container">
+
+      <div class="news-head">
+        <p class="news-eyebrow">Newsletters</p>
+        <h2 class="news-title">Read Our Newsletters</h2>
+        <p class="news-intro">
+          Catch up on the latest from the Chamber &mdash; member news, events, and opportunities,
+          every week in The Chamber Connect.
+        </p>
+      </div>
+
+      <div class="news-grid">
+        <a class="news-card" href="#">
+          <img class="news-thumb"
+               src="{{ url_for('static', filename='images/newsletter-cover.jpg') }}"
+               alt="" aria-hidden="true"
+               onerror="this.classList.add('is-missing')">
+          <span class="news-card-title">Week 5/27/26 Newsletter &ndash; SFLHCC President Attends Freedom Tower Press Conference Honori&hellip;</span>
+        </a>
+
+        <a class="news-card" href="#">
+          <img class="news-thumb"
+               src="{{ url_for('static', filename='images/newsletter-cover.jpg') }}"
+               alt="" aria-hidden="true"
+               onerror="this.classList.add('is-missing')">
+          <span class="news-card-title">Week 5/20/26 Newsletter &ndash; An Evening of Networking and Connection at Vi at Aventura&hellip;</span>
+        </a>
+
+        <a class="news-card" href="#">
+          <img class="news-thumb"
+               src="{{ url_for('static', filename='images/newsletter-cover.jpg') }}"
+               alt="" aria-hidden="true"
+               onerror="this.classList.add('is-missing')">
+          <span class="news-card-title">Week 5/13/26 Newsletter &ndash; SFLHCC Exclusive Networking Reception at Seminole Hard Rock&hellip;</span>
+        </a>
+      </div>
+
+      <div class="news-subscribe">
+        <div class="news-subscribe-text">
+          <h2 class="news-subscribe-title">Subscribe to Our Newsletter</h2>
+          <p class="news-subscribe-sub">Get The Chamber Connect delivered straight to your inbox.</p>
+        </div>
+        <form class="news-subscribe-form" action="#" method="post">
+          <input class="news-email" type="email" name="email"
+                 placeholder="Enter your email address"
+                 aria-label="Email address" required>
+          <button class="news-signup" type="submit">
+            Sign Up <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  {# ================ TOP SUPPORTING MEMBERS ================ #}
+  <section class="members-section">
+    <div class="container">
+      <h2 class="members-title">Thank You to Our Top Supporting Members!</h2>
+
+      <div class="members-grid">
+        {% set members = [
+          {'name': 'Chase', 'file': 'members/chase.png'},
+          {'name': 'Aflac', 'file': 'members/aflac.png'},
+          {'name': "Nicklaus Children's Hospital", 'file': 'members/nicklaus.png'},
+          {'name': 'UHealth — University of Miami Health System', 'file': 'members/uhealth.png'},
+          {'name': 'Victoria Nursing & Rehabilitation', 'file': 'members/victoria.png'},
+          {'name': 'Southwest', 'file': 'members/southwest.png'},
+          {'name': 'Verizon', 'file': 'members/verizon.png'},
+          {'name': 'Amazon', 'file': 'members/amazon.png'},
+          {'name': 'Xerox', 'file': 'members/xerox.png'},
+          {'name': 'Wells Fargo', 'file': 'partner-wellsfargo.png'},
+          {'name': 'Coastal Wealth', 'file': 'members/coastal.png'},
+          {'name': 'International Finance Bank', 'file': 'members/ifb.png'},
+          {'name': 'Amerant Bank', 'file': 'members/amerant.png'}
+        ] %}
+        {% for m in members %}
+        <div class="member-logo">
+          <img src="{{ url_for('static', filename='images/' ~ m.file) }}"
+               alt="{{ m.name }}"
+               onerror="this.style.display='none'; this.nextElementSibling.hidden=false">
+          <span class="member-fallback" hidden>{{ m.name }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 
 {% endblock %}

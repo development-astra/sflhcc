@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us — South Florida Hispanic Chamber of Commerce{% endblock %}
+
+{% block content %}
+
+  {# ===================== ABOUT HERO ===================== #}
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">
+        Serving the Hispanic Business Community <span class="page-hero-accent">Since 1994</span>
+      </h1>
+      <p class="page-hero-text">
+        Founded on July 21, 1994, the South Florida Hispanic Chamber of Commerce has grown from a
+        local initiative into one of the five most prominent Hispanic Chambers of Commerce in the
+        United States.
+      </p>
+    </div>
+  </section>
+
+  {# ===================== ABOUT STATS ===================== #}
+  <section class="about-stats">
+    <div class="container">
+      <div class="about-stats-grid">
+
+        <div class="about-stat">
+          <p class="about-stat-value">1994</p>
+          <p class="about-stat-label">Year Founded</p>
+          <p class="about-stat-desc">July 21, 1994 &mdash; 32 years of service</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">1,600+</p>
+          <p class="about-stat-label">Members</p>
+          <p class="about-stat-desc">Hispanic and non-Hispanic businesses</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">67%</p>
+          <p class="about-stat-label">Hispanic Population</p>
+          <p class="about-stat-desc">Miami-Dade County demographics</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">Top 5</p>
+          <p class="about-stat-label">National Ranking</p>
+          <p class="about-stat-desc">One of the top five Hispanic Chambers in the U.S.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== OUR HISTORY ===================== #}
+  <section class="history-section">
+    <div class="container">
+
+      <p class="history-eyebrow">Our History</p>
+      <h2 class="history-title">32 Years of Empowering South Florida&rsquo;s Business Community</h2>
+      <p class="history-intro">
+        The South Florida Hispanic Chamber of Commerce (SFLHCC) is a nonprofit 501(c)(6)
+        organization established in 1994 to promote business leadership, create economic prospects,
+        and provide legislative advocacy for the business community in South Florida.
+      </p>
+
+      <div class="history-grid">
+
+        <div class="history-text">
+          <blockquote class="history-quote">
+            The SFLHCC is recognized as one of the most influential Hispanic chambers in the
+            country and one of the leading Hispanic business organizations in Florida.
+          </blockquote>
+          <p class="history-body">
+            The SFLHCC is an organization founded 32 years ago, and it seeks to provide
+            opportunities in commerce to the different populations that exist in South Florida. As
+            South Florida is one of the most diverse areas of the state, the SFLHCC recognizes the
+            potential that exists for companies to do business with people from different
+            backgrounds and experiences. With a population of approximately 67% Hispanics,
+            Miami-Dade County has flourished as the gateway to the Americas. This community is
+            represented by entrepreneurs of the U.S., Caribbean, Central America, and South America.
+          </p>
+          <p class="history-body">
+            We provide opportunities for our members by organizing local programs to promote and
+            elevate Hispanic-owned and non-Hispanic-owned businesses. The SFLHCC is an association
+            with more than 1,600 members and advocates for thousands of Hispanic and non-Hispanic
+            businesses in Florida.
+          </p>
+        </div>
+
+        <div class="history-media">
+          <span class="history-image-accent" aria-hidden="true"></span>
+          <img class="history-image"
+               src="{{ url_for('static', filename='images/hero-event.png') }}"
+               alt="SFLHCC members receiving a proclamation at an award ceremony">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== MISSION STATEMENT ===================== #}
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-card">
+        <p class="mission-eyebrow">Mission Statement</p>
+        <h2 class="mission-title">Advancing the Commercial, Financial, Educational &amp; Civic Interests of South Florida</h2>
+        <p class="mission-body">
+          The South Florida Hispanic Chamber of Commerce (SFLHCC) was founded on July 21, 1994,
+          with the mission of promoting the continued growth and development of the Hispanic and
+          non-Hispanic business community and to serve as a resource center and forum to advocate
+          for businesses. The organization is comprised of dedicated professional individuals and
+          business owners who have come together to advance the commercial, financial, educational,
+          and civic interests of the ever-growing community of South Florida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

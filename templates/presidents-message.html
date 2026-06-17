@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}President&rsquo;s Message — South Florida Hispanic Chamber of Commerce{% endblock %}
+
+{% block content %}
+
+  {# ===================== PRESIDENT'S MESSAGE HERO ===================== #}
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">
+        <span class="page-hero-accent">President&rsquo;s</span> Message
+      </h1>
+      <p class="page-hero-text">
+        A note from our President &amp; CEO on our mission and impact.
+      </p>
+    </div>
+  </section>
+
+  {# ===================== STATS ROW ===================== #}
+  <section class="about-stats">
+    <div class="container">
+      <div class="about-stats-grid">
+
+        <div class="about-stat">
+          <p class="about-stat-value">130+</p>
+          <p class="about-stat-label">Year Founded</p>
+          <p class="about-stat-desc">July 21, 1994 &mdash; 32 years of service</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">1,600+</p>
+          <p class="about-stat-label">Members</p>
+          <p class="about-stat-desc">Hispanic and non-Hispanic businesses</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">67%</p>
+          <p class="about-stat-label">Hispanic Population</p>
+          <p class="about-stat-desc">Miami-Dade County demographics</p>
+        </div>
+
+        <div class="about-stat">
+          <p class="about-stat-value">Top 5</p>
+          <p class="about-stat-label">National Ranking</p>
+          <p class="about-stat-desc">One of the top five Hispanic Chambers in the U.S.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ===================== FROM THE PRESIDENT ===================== #}
+  <section class="presmsg-section">
+    <div class="container">
+      <p class="presmsg-eyebrow">From the President</p>
+      <h2 class="presmsg-title">Building bridges, creating opportunity</h2>
+
+      <div class="presmsg-grid">
+
+        {# Left: photo + name #}
+        <div class="presmsg-media">
+          <span class="presmsg-accent" aria-hidden="true"></span>
+          <div class="presmsg-photo">
+            <span class="board-photo-fallback" aria-hidden="true"><i class="bi bi-person"></i></span>
+            <img class="board-photo"
+                 src="{{ url_for('static', filename='images/board/liliam-lopez.jpg') }}"
+                 alt="Liliam M. Lopez" onerror="this.style.display='none'">
+          </div>
+          <p class="presmsg-name">Liliam M. Lopez</p>
+          <p class="presmsg-role">President &amp; CEO, SFLHCC</p>
+        </div>
+
+        {# Right: message #}
+        <div class="presmsg-body">
+          <p class="presmsg-greeting">Dear Friends:</p>
+          <p class="presmsg-text">
+            It is a great pleasure to reach you through this personal message. The SFLHCC is a
+            non-profit organization founded on July 21st, 1994 and is considered one of the largest
+            and most influential Hispanic Chambers in the U.S. with over 1,600 members. Our monthly
+            luncheons attract 300-450 guests and include a networking reception followed by a
+            delicious lunch at The Biltmore Hotel that always features a panel discussion on topics
+            of interest to our members. Our programs are representative of our community&rsquo;s
+            needs. The Chamber has provided hundreds of small businesses with technical assistance
+            and cash grants reaching over $160,000. Our Lunch/Learn Business Series features
+            information on an array of topics to provide the necessary tools to our small business
+            owners. Through our foundation, we have granted $1 million in scholarships to financially
+            disadvantaged students pursuing either a business, health, or tourism-related career. Our
+            Education Enrichment Fellowship Program has provided financially disadvantaged students
+            with the possibility of traveling out of state to attend a conference with top executives
+            and entrepreneurs. These opportunities created are unique for a young student who is still
+            undecided on what career to pursue in life. Thank you to our partner Southwest Airlines
+            for being the main sponsor of our program that has awarded 190 fellowships in the last 16
+            years. We also thank TD Bank for its continued support of this program. Special
+            appreciation to the teachers and faculty of Miami-Dade County Public Schools&rsquo;
+            Academy of Business and Hospitality, of which we are a &ldquo;Champion.&rdquo;
+          </p>
+          <p class="presmsg-signoff">
+            Thank you.<br>
+            Liliam M. Lopez.<br>
+            President &amp; CEO SFLHCC
+          </p>
+          <a href="#" class="btn-solid-blue">
+            Read Liliam&rsquo;s Bio <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
