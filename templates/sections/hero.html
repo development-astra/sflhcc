@@ -1,0 +1,61 @@
+{# Hero section #}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            {# ── Left column: copy + CTAs + partners ── #}
+            <div class="col-lg-7">
+                <h1 class="hero-heading">
+                    <span class="hero-heading-accent">Empowering</span> South Florida's Hispanic Business Community
+                </h1>
+
+                <p class="hero-subtext">
+                    The South Florida Hispanic Chamber of Commerce (SFLHCC) connects, supports, and
+                    advocates for Hispanic-owned businesses across Miami-Dade and beyond&nbsp;&mdash;
+                    helping you grow, lead, and succeed.
+                </p>
+
+                <div class="hero-ctas d-flex flex-wrap gap-3">
+                    <a href="#" class="btn btn-hero-outline">
+                        JOIN THE CHAMBER TODAY
+                        <i class="bi bi-arrow-up-right hero-cta-icon"></i>
+                    </a>
+                    <a href="#" class="btn btn-hero-outline">
+                        VIEW UPCOMING EVENTS
+                        <i class="bi bi-arrow-up-right hero-cta-icon"></i>
+                    </a>
+                </div>
+
+                {# Partners strip #}
+                <div class="hero-partners mt-4 pt-2">
+                    <p class="partners-label">IN PARTNERSHIP WITH</p>
+                    <div class="partners-logos d-flex flex-wrap align-items-center gap-4">
+                        <img src="{{ url_for('static', filename='images/partner-elevate.png') }}"
+                             alt="Elevate South Florida"
+                             class="partner-logo"
+                             onerror="this.style.display='none'">
+                        <img src="{{ url_for('static', filename='images/partner-ushcc.png') }}"
+                             alt="USHCC"
+                             class="partner-logo"
+                             onerror="this.style.display='none'">
+                        <img src="{{ url_for('static', filename='images/partner-wellsfargo.png') }}"
+                             alt="Wells Fargo"
+                             class="partner-logo"
+                             onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+
+            {# ── Right column: event photo ── #}
+            <div class="col-lg-5">
+                <div class="hero-image-wrap">
+                    <div class="hero-image-accent"></div>
+                    <img src="{{ url_for('static', filename='images/hero-event.jpg') }}"
+                         alt="SFLHCC Award Ceremony"
+                         class="hero-image img-fluid">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

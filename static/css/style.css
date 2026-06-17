@@ -1,0 +1,307 @@
+/* ==========================================================
+   SFLHCC – South Florida Hispanic Chamber of Commerce
+   style.css  |  Custom styles on top of Bootstrap 5
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. CSS Custom Properties
+   ---------------------------------------------------------- */
+:root {
+    --sfl-blue:       #4A5BC4;   /* Main nav bar background     */
+    --sfl-red:        #D42B2B;   /* CTA button / logo accent    */
+    --sfl-red-hover:  #b82222;   /* CTA button hover            */
+    --sfl-dark:       #1a1a1a;   /* Body / link text            */
+    --sfl-gray:       #555555;   /* Secondary text              */
+    --sfl-border:     #333333;   /* Member Login button border  */
+}
+
+/* ----------------------------------------------------------
+   2. Global Reset / Base
+   ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: var(--sfl-dark);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ----------------------------------------------------------
+   3. Header – Top Bar
+   ---------------------------------------------------------- */
+.site-header {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.header-top {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* Logo */
+.header-logo-link {
+    display: inline-block;
+    line-height: 0;
+}
+
+.header-logo {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+/* ----------------------------------------------------------
+   4. Utility Navigation
+   ---------------------------------------------------------- */
+.utility-nav .utility-link {
+    color: var(--sfl-dark);
+    font-size: 0.925rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.utility-nav .utility-link:hover {
+    color: var(--sfl-blue);
+}
+
+/* ----------------------------------------------------------
+   5. CTA Buttons (Member Login / Join The Chamber)
+   ---------------------------------------------------------- */
+.btn-member-login {
+    color: var(--sfl-border);
+    background-color: transparent;
+    border: 1.75px solid var(--sfl-border);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-member-login:hover {
+    background-color: var(--sfl-border);
+    color: #ffffff;
+}
+
+.btn-join-chamber {
+    color: #ffffff;
+    background-color: var(--sfl-red);
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: background-color 0.2s ease;
+}
+
+.btn-join-chamber:hover {
+    background-color: var(--sfl-red-hover);
+    color: #ffffff;
+}
+
+/* ----------------------------------------------------------
+   6. Main Navigation Bar (Blue Bar)
+   ---------------------------------------------------------- */
+.header-main-nav {
+    background-color: var(--sfl-blue);
+}
+
+.main-nav-desktop {
+    /* justify-content-between set inline via Bootstrap — no override needed */
+}
+
+.main-nav-link {
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 2px 0;
+    transition: opacity 0.2s ease;
+}
+
+.main-nav-link:hover {
+    color: #ffffff;
+    opacity: 0.75;
+}
+
+.nav-pipe {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.875rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ----------------------------------------------------------
+   7. Hero Section
+   ---------------------------------------------------------- */
+.hero-section {
+    background-color: #f5f4f8;
+    padding: 72px 0 64px;
+}
+
+.hero-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.18;
+    color: var(--sfl-dark);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.hero-heading-accent {
+    color: var(--sfl-blue);
+}
+
+.hero-subtext {
+    font-size: 0.975rem;
+    color: var(--sfl-gray);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 2rem;
+}
+
+/* Hero CTA buttons */
+.btn-hero-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--sfl-dark);
+    background-color: transparent;
+    border: 1.75px solid var(--sfl-dark);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 11px 18px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-hero-outline:hover {
+    background-color: var(--sfl-dark);
+    color: #ffffff;
+}
+
+.hero-cta-icon {
+    font-size: 0.85rem;
+}
+
+/* Partners strip */
+.partners-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sfl-gray);
+    margin-bottom: 0.75rem;
+}
+
+.partner-logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.partner-logo:hover {
+    opacity: 1;
+}
+
+/* Hero image */
+.hero-image-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.hero-image-accent {
+    position: absolute;
+    top: 12%;
+    left: -14px;
+    width: 7px;
+    height: 62%;
+    background-color: var(--sfl-blue);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.hero-image {
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding: 48px 0;
+        text-align: center;
+    }
+
+    .hero-subtext {
+        max-width: 100%;
+    }
+
+    .hero-ctas {
+        justify-content: center;
+    }
+
+    .hero-partners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-image-wrap {
+        margin-top: 2rem;
+    }
+
+    .hero-image-accent {
+        display: none;
+    }
+}
+
+/* ----------------------------------------------------------
+   8. Mobile / Tablet Navigation Collapse
+   ---------------------------------------------------------- */
+.mobile-nav-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-link {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: opacity 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+    color: #ffffff;
+    opacity: 0.75;
+}
+
+.mobile-utility {
+    opacity: 0.8;
+    font-size: 0.85rem;
+}
+
+.mobile-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
